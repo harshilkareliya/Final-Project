@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App{
+    display: flex;
+}
+.left{
+    flex-basis: 19% ;
+}
+.leftPanel{
+    height: 100vh;
+    padding: 5px 8px;
+}
+.user{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;   
+}
+.user_logo{
+    width: 23%;
+    /* height: 60px; */
+}
+
+
+
+.main{
+    flex-basis: 81%;
+}
+/* Main Panel */
+.mainPanel{
+    width: 100%;
+    height: 100vh;
+}
+/* My Day */
+.myDay{
+    height: 100vh;
+    padding: 30px;
+    background-size: cover;
+    color: white;
+}
+.myDayHeader{
+    position: relative;
+    height: 80px;
+    margin-bottom: 10px;
+    /* border: 1px solid black; */
+}
+.themeOption{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 25px;
+    transform: rotate(90deg);
+    /* background-color: gainsboro; */
+    padding: 0px 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+.themeOption:hover{
+    background-color: gainsboro;
+}
+.themePlate{
+    position: absolute;
+    top: 73px;
+    right: 30px;
+    width: 350px;
+    padding: 25px;
+    background-color: white;
+}
+.themeTable{
+    width: 300px;
+    /* display: flex; */
+}
+.tableRow{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.tableCol{
+    height: 50px;
+    width: 18%;
+    border: 1px solid black;
+    transition: 0.5s;
+    background-size: cover;
+}
+.tableCol:hover{
+    transform: scale(1.1);
+}
+
+
+.allTask{
+    /* border: 1px solid white; */
+    height: 80vh;
+    max-height: 75vh;
+}
+
+.inputTask{
+    /* background-color: white; */
+    color: black;
+    margin-top: 20px;
+    position: relative;
+}
+.round{
+    position: absolute;
+    font-size: 20px;
+    left: 10px;
+    top: 3px;
+    cursor: pointer;
+}
+.inputTask input{
+    border: none;
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    padding-left: 40px;
+}
+.showTask{
+    height: auto;
+    min-height: 50px;
+    background-color: rgba(255, 255, 255, 0.213);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+    border-radius: 5px;
+}
+.showRound{
+    font-size: 23px;
+    width: 5%;
+    text-align: center;
+    cursor: pointer;
+}
+.showedTasks{
+    width: 90%;
+    font-size: 20px;
+    cursor: default;
+    padding-top: 13px;
+}
+.showedFavorites{
+    width: 5%;
+    font-size: 23px;
+    text-align: center;
+    cursor: pointer;
+}

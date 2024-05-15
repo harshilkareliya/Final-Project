@@ -1,0 +1,64 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../style.css">
+        <style>
+            select{
+                width: auto;
+                height: 25px;
+            }
+        </style>
+    </head>
+    <body>
+    <section class="main">
+        <div id="header">
+            <script>
+                function header(){
+                    let navbar = `<a href="../index.html" >Home</a>
+                    <a href="job_apply.html">Applied Jobs</a>
+                    <a href="bookmark.html">Bookmarks</a>`   
+                    document.getElementById("header").innerHTML = navbar
+                }
+                header()
+            </script>
+        </div>
+        <div style="display: flex;">
+            <select id="filterName" onchange="nameFilter()">
+                <option value="all">Select by name</option>
+                <option value="atoz">A to Z</option>
+                <option value="ztoa">Z to A</option>
+            </select>
+            <select name="" id="filterRole" onchange="roleFilter()">
+                <option value="all">Select by role</option>
+                <option value="Frontend">Frontend</option>
+                <option value="Backend">Backend</option>
+                <option value="Full Stack">Full Stack</option>
+                <option value="Flutter">Flutter</option>
+            </select>
+            <select name="" id="filterSalary" onchange="salaryFilter()">
+                <option value="all">Select by Salary</option>
+                <option value="ltoh">Low to High</option>
+                <option value="htol">High to Low</option>
+            </select>
+        </div>
+        <table>
+            <table style="text-align: left;background-color: aquamarine;">
+                <th id="tableNameP">Name</th>
+                <th id="tableEmailP">Email </th>
+                <th id="tableFieldP">Job applied</th>
+                <th id="tableSalaryP">Salary Expected</th>
+                <th id="tablebookP">Add to bookmark</th>
+            </table>
+        </table>
+        <div id="show">
+           
+        </div>
+    </section>
+
+    </body>
+    </html>
+    <script src="../JS/script.js">
+    </script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section class="main">
+        <div id="header">
+            <script>
+                function header(){
+                    let navbar = `<a href="../index.html" >Home</a>
+                    <a href="job_apply.html">Applied Jobs</a>
+                    <a href="bookmark.html">Bookmarks</a>`   
+                    document.getElementById("header").innerHTML = navbar
+                }
+                header()
+            </script>
+        </div>
+        <!-- <button onclick="showBookmark()">Get Data</button> -->
+        <div id="showBookmark">
+            
+        </div>
+        
+
+    </section>
+    
+</body>
+</html>
+<!-- <script src="../JS/script.js"></script> -->
+<script>
+
+var bookmark = JSON.parse(localStorage.getItem("bookmarkData")) || []
+console.log(bookmark)
+
+function showBookmark(){
+    document.getElementById("showBookmark").innerHTML = ""
+    bookmark.map((showBookmarkData,index)=>{
+        let tabel = document.createElement("table")
+        tabel.innerHTML = `<table id="table">
+        <tr id="tableRow">
+            <td id="tableName">${showBookmarkData.name}</td>
+            <td id="tableEmail">${showBookmarkData.email}</td>
+            <td id="tableField">${showBookmarkData.field}</td>
+            <td id="tableDelete" onclick="delet(${index})">Delete</td>
+        </tr>
+    </table>`
+
+    document.getElementById("showBookmark").append(tabel)
+    })
+
+}
+showBookmark()
+
+function delet(index){
+    bookmark.splice(index,1)
+    localStorage.setItem("bookmarkData",JSON.stringify(bookmark))
+    showBookmark()
+}
+
+</script>

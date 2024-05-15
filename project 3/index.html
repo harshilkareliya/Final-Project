@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- bootstrap icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+</head>
+<body>
+    <div id="header"></div>
+    
+    <center>
+    <div class="add">
+        <h1>Add Recipe</h1><br><br>
+
+        <label for="">Add title :- </label><br>
+        <input type="text" id="add_title" placeholder="Add title for recipe"><br><br>
+        <label for="">Ingredients :- </label><br>
+        <textarea name="" id="add_ingredients" cols="30" rows="5"></textarea><br>
+        <label for="">Instructions :- </label><br>
+        <textarea name="" id="add_instructions" cols="30" rows="5"></textarea><br>
+        <select name="" id="add_cuisine">
+            <option value="not selected">cuisine</option>
+            <option value="Indian cuisine">Indian cuisine</option>
+            <option value="Italian cuisine">Italian cuisine</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Greek cuisine">Greek cuisine</option>
+        </select><br><br>
+        <input type="file" id="add_image" accept="image/*" onclick="inputimage()"><br><br>
+        <button onclick="add_data()">Add recipe</button>
+    </div>
+    </center>
+
+</body>
+</html>
+<script type="module">
+    import{header} from './header.js'
+
+    document.addEventListener("DOMContentLoaded",()=>{
+        header()
+    })
+
+</script>
+<!-- <script src="JS.js"></script> -->
+<script>
+var all_recipe = JSON.parse(localStorage.getItem("recipe_data")) || []
+
+var img = document.getElementById("add_image")
+
+    function inputimage(){
+        let file = img.files;
+        if(file.length>0){
+            let filereader = new FileReader();
+            filereader.onload = function(event){
+                preview.setAttribute('src',event.target.result)
+            }
+            filereader.readAsDataURL(file[0])
+        }
+    }   
+
+
+function add_data(){ 
+    var add_title = document.getElementById("add_title").value
+    var add_ingredients = document.getElementById("add_ingredients").value
+    var add_instructions = document.getElementById("add_instructions").value
+    var add_cuisine = document.getElementById("add_cuisine").value
+    // var img = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg" 
+    let image = document.getElementById("add_image")
+    var index = all_recipe.length+1
+
+    var add_recipe = {
+        id : index,
+        image : image.files[0].name,
+        title : add_title,
+        ingredients : add_ingredients,
+        instructions : add_instructions,
+        cuisine : add_cuisine
+    }
+    
+    all_recipe.push(add_recipe)
+    localStorage.setItem("recipe_data",JSON.stringify(all_recipe))
+    
+    // console.log(add_recipe)
+    clear()
+}
+
+function clear(){
+    var img = document.getElementById("add_image").value = ""
+    var add_title = document.getElementById("add_title").value = ""
+    var add_ingredients = document.getElementById("add_ingredients").value = ""
+    var add_instructions = document.getElementById("add_instructions").value = ""
+    var add_cuisine = document.getElementById("add_cuisine").value = "not selected"
+}
+
+</script>   

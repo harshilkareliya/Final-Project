@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="main">
+        <div id="header">
+            <script>
+                function header(){
+                    let navbar = `<a href="index.html" >Home</a>
+                    <a href="Other Page/job_apply.html">Applied Jobs</a>
+                    <a href="Other Page/bookmark.html">Bookmarks</a>`   
+                    document.getElementById("header").innerHTML = navbar
+                }
+                header()
+            </script>
+        </div>
+        <div class="sub">
+            <center>
+                <div class="application">
+                    <h1>Enter Your Application Detail</h1><br>
+                    <input type="text" placeholder="Name" id="name"><br>
+                    <input type="email" id="email" placeholder="Email"><br>
+                    <select name="" id="field">
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+                        <option value="Full Stack">Full Stack</option>
+                        <option value="Flutter">Flutter</option>
+                    </select><br>
+                    <input type="number" id="salary" placeholder="Salary"><br>
+                    <button onclick="add_application()" type="submit">Submit</button>
+                </div>
+            </center>
+        </div>
+    </section> <!--main-->
+</body>
+</html>
+<script src="JS/script.js"></script>

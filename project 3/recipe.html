@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        .main_sec{
+            border: none;
+            background-color: rgb(240, 235, 235);
+        }
+        .main_sec div{
+            height: 40px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <select name="" id="filter_cuisine" onchange="filter_recipe()">
+        <option value="not selected">cuisine</option>
+        <option value="Indian cuisine">Indian cuisine</option>
+        <option value="Italian cuisine">Italian cuisine</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Mexican">Mexican</option>
+        <option value="Greek cuisine">Greek cuisine</option>
+    </select><br><br>
+    <div>
+        <div class="main_sec">
+            <div class="recipe_image">Picture</div>
+            <div class="recipe_name">Tittle</div>
+            <div class="recipe_Ingred">Ingredients</div>
+            <div class="recipe_Instruct">Instructions</div>
+            <div class="recipe_cuise">Cuisine</div>
+        </div>
+    </div>
+
+    <div id="show_recipe" style="text-align: center;">
+    
+    </div>
+</body>
+</html>
+<script type="module">
+    import{header} from './header.js'
+    document.addEventListener("DOMContentLoaded",()=>{
+        header()
+    })
+</script>
+<script src="JS.js"></script>
