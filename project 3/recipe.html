@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="header"></div>
-    <select name="" id="filter_cuisine" onchange="filter_recipe()">
+    <select name="" class="filter_cuisine" id="filter_cuisine" onchange="filter_recipe()">
         <option value="not selected">cuisine</option>
         <option value="Indian cuisine">Indian cuisine</option>
         <option value="Italian cuisine">Italian cuisine</option>
@@ -30,19 +30,19 @@
         <option value="Mexican">Mexican</option>
         <option value="Greek cuisine">Greek cuisine</option>
     </select><br><br>
-    <div>
-        <div class="main_sec">
+    <div style="margin: 0px 30px;color: black;background-color: rgba(250, 245, 245, 0.863);">
+        <div class="main_sec" >
             <div class="recipe_image">Picture</div>
             <div class="recipe_name">Tittle</div>
             <div class="recipe_Ingred">Ingredients</div>
             <div class="recipe_Instruct">Instructions</div>
             <div class="recipe_cuise">Cuisine</div>
         </div>
+        <div id="show_recipe" style="text-align: center;color: black;">
+        
+        </div>
     </div>
 
-    <div id="show_recipe" style="text-align: center;">
-    
-    </div>
 </body>
 </html>
 <script type="module">

@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-image: url(./background.jpg);
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 #header{
     height: 80px;
     display: flex;
@@ -21,10 +26,16 @@
     margin-left: 50px;
 }
 #navbar li a{
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
+.add{
+    background-color: rgba(250, 245, 245, 0.309);
+    color: black;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
 .add input{
     border: none;
     border-bottom: 1px solid gray;
@@ -32,9 +43,13 @@
 
 #main_sec,.main_sec{
     display: flex;
+    /* align-items: center; */
     text-align: center;
     /* line-height: 100px; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    margin: 10px 0px;
+    /* color: black; */
+    /* color: white; */
 }
 #recipe_image,.recipe_image{
     width: 10%;
@@ -72,4 +87,9 @@
 #edit_sec i{
     margin-left: 10px;
     cursor: pointer;
+}
+.filter_cuisine{
+    position: absolute;
+    right: 30px;
+    height: 30px;
 }

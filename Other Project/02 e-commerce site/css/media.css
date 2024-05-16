@@ -1,0 +1,160 @@
+@media(max-width:992px){
+    #info ul li{
+        font-size: 15px;
+    }
+
+    #slider-1{
+        width: auto;
+        height: auto;
+    }
+
+    #slider-2{
+        margin: 0;
+        width: auto;
+        height: auto;
+    }
+
+    .slider-2{
+        width: 90%;
+        height: auto;
+    }
+
+    .carousel-cell-1{
+        width: 20%;
+        height: auto;
+    }
+
+    #all{
+        width: auto;
+        height: auto;
+    }
+
+    #design{
+        height: auto;
+    }
+
+    #cate{
+        height: auto;
+    }
+
+    #slider-3{
+        height: auto;
+    }
+
+    .carousel-cell-3{
+        height: auto;
+    }
+
+    #jack{
+        height: auto;
+    }
+
+    #slu{
+        height: auto;
+    }
+
+    #what{
+        height: auto;
+    }
+
+    #bag{
+        height: auto;
+    }
+
+    #slider-4{
+        width: auto;
+        height: auto;
+    }
+
+    .carousel-cell-4{
+        height: auto;
+    }
+
+    #acc{
+        height: auto;
+    }
+
+    .acc-main{
+        height: auto;
+    }
+
+    #slider-5{
+        height: auto;
+    }
+
+    .carousel-cell-5{
+        height: auto;
+    }
+
+    #save{
+        height: auto;
+    }
+
+    #become{
+        height: auto;
+    }
+
+    footer{
+        height: auto;
+    }
+
+    .fot-main{
+        padding: 20px;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .fot-1,.fot-2{
+        flex-basis: 50%;
+    }
+
+    #foot{
+        height: auto;
+    }
+
+    .foot{
+        height: auto;
+    }
+
+}
+
+@media(max-width:768px){
+
+    #header{
+        display: block;
+    }
+
+    header{
+        display: none;
+    }
+
+    #info ul li{
+        font-size: 13px;
+    }
+
+    .carousel-cell-1{
+        width: 23%;
+        height: auto;
+    }
+
+    .carousel-cell-5{
+        width: 30%;
+        height: auto;
+    }
+
+}
+
+@media(max-width:576px){
+    #info ul li{
+        font-size: 10px;
+    }
+    
+    .carousel-cell-1{
+        width: 25%;
+        height: auto;
+    }
+    
+    .fot-1,.fot-2{
+        flex-basis: 70%;
+    }
+}

@@ -40,8 +40,9 @@ function showRecipe(){
             showRecipe()
         })
         edit_sec.append(edit,remove)
+        let hr = document.createElement("hr")
         main_sec.append(image,name,Ingred,Instruct,cuise,edit_sec)
-        document.getElementById("show_recipe").append(main_sec)
+        document.getElementById("show_recipe").append(main_sec,hr)
     })
 
 }
@@ -77,6 +78,9 @@ function displayFiltered_recipe(filterRecipe){
     filterRecipe.map((recipes,index)=>{
         let main_sec = document.createElement("div")
         main_sec.setAttribute("id","main_sec")
+        let image = document.createElement("img")
+        image.setAttribute("id","recipe_image")
+        image.setAttribute("src",recipes.image)
         let name = document.createElement("div")
         name.setAttribute("id","recipe_name")
         name.append(recipes.title)
@@ -107,8 +111,9 @@ function displayFiltered_recipe(filterRecipe){
             filter_recipe()
         })
         edit_sec.append(edit,remove)
-        main_sec.append(name,Ingred,Instruct,cuise,edit_sec)
-        document.getElementById("show_recipe").append(main_sec)
+        let hr = document.createElement("hr")
+        main_sec.append(image,name,Ingred,Instruct,cuise,edit_sec)
+        document.getElementById("show_recipe").append(main_sec,hr)
     })
 }
 

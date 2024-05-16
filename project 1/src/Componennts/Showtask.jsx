@@ -11,7 +11,7 @@ function Showtask() {
       {
         todo && todo.map((e, i) => (
           <div key={i} className='showTask'>
-            <span className='showRound'>
+            <span className='showRound' >
               <FaRegCircle />
             </span>
             <p className='showedTasks'>

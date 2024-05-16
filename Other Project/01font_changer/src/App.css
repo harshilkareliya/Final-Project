@@ -1,0 +1,73 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#textArea{
+  border: none;
+  min-height: 240px;
+  height: auto;
+  overflow: visible;
+  padding: 10px;
+}
+
+.textIn{
+  border: 1px solid black;
+  font-size: 24px;
+}
+.textOut{
+  border: 1px solid black;
+  font-size: 24px;
+}
+.textOut p{
+  /* border: 1px solid black; */
+  min-height: 240px;
+}
+.textOut select {
+  font-size: 20px;
+}
+
+
+/* .alertbox{
+  width: 35%;
+  min-height: 100px;
+  height: auto;
+  text-align: center;
+  position: absolute;
+  top: 0;
+} */
+
+/* @keyframes alertbox {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+} */
+
+
+.alertbox {
+  width: 35%;
+  min-height: 100px;
+  height: auto; 
+  text-align: center;
+  position: fixed;
+  top: -100px; /* Start above the viewport */
+  left: 0;
+  right: 0;
+  animation: slideDown 0.5s forwards; /* Animation for sliding down */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Keyframe animation for sliding down */
+@keyframes slideDown {
+  0% {
+      top: -100px;
+  }
+  100% {
+      top: 0px;
+  }
+}

@@ -9,17 +9,26 @@ function add_application(){
     let addField = document.getElementById("field").value
     let addSalary = document.getElementById("salary").value 
 
-    const userData = {
-        id : applicationData.length,
-        name : addName,
-        email : addEmail,
-        field : addField,
-        salary : addSalary                                              
+    if(addName.length === 0){
+        alert("Please, Enter Your Name")
+    } else if(addEmail.length === 0){
+        alert("Please, Enter Your Email")
+    } else if(addField.length === 0){
+        alert("Please, Enter Your Expected Salary")
     }
-    applicationData.push(userData)
-
-    localStorage.setItem("appData",JSON.stringify(applicationData))
-    clearData()
+    else{
+        const userData = {
+            id : applicationData.length,
+            name : addName,
+            email : addEmail,
+            field : addField,
+            salary : addSalary                                              
+        }
+        applicationData.push(userData)
+        
+        localStorage.setItem("appData",JSON.stringify(applicationData))
+        clearData()
+    }
 }
 
 function clearData(){

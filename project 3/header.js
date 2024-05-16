@@ -3,7 +3,7 @@ function header(){
     <div><img src="logo.jpg" alt="" id="logo"></div>
     <nav id="navbar">
         <li><a href="index.html">Add Recipe</a></li>
-        <li><a href="recipe.html" target="_blank">My Recipe</a></li>
+        <li><a href="recipe.html">My Recipes</a></li>
     </nav>
     </div>`
     document.getElementById("header").innerHTML = nav

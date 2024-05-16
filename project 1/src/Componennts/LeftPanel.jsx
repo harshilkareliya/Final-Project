@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from './img/user_logo.png'
-import { TbHome } from "react-icons/tb";
+// import { TbHome } from "react-icons/tb";
 
 function LeftPanel() {
     return (

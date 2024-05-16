@@ -1,0 +1,634 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+.heading{
+    font-family: 'Rye', cursive;
+    position: relative;
+    text-align: center;
+
+}     
+.heading span{
+    /* top: 45px; */
+    color: white;
+    /* font-size: 70px; */
+}
+
+
+
+.intro{
+    height: auto;
+    /* border: 1px solid white; */
+    /* display: flex; */
+    justify-content: space-between;
+}
+.intro1{
+    flex-basis: 45%;    
+    height: auto;
+    /* border: 1px solid yellow; */
+    /* background-color: #1ceaed; */
+}
+.subintro{
+    /* border: 2px solid red; */
+    /* background-color: blue; */
+    /* width: auto; */
+    height: 800px;
+}
+
+.intro2{
+    flex-basis: 50%;    
+    height: 300px;
+    /* border: 1px solid yellow; */
+    text-align: left;
+    /* padding: 50px 0px; */
+}
+.intro2 h1{
+    font-size: 50px;
+    font-weight: bold;
+        /* font-family: 'Black Ops One', cursive; */
+    /* font-family: 'Creepster', cursive; */
+    font-family: 'Pirata One', cursive;
+    letter-spacing: 3px;
+    padding-top: 50px;
+}
+.intro2 h2{
+    font-size: 60px;
+    font-weight: bold;
+    /* font-family: 'Black Ops One', cursive; */
+    /* font-family: 'Creepster', cursive; */
+    font-family: 'Pirata One', cursive;
+    letter-spacing: 3px;
+}
+.intro2 h3{
+    font-size: 60px;
+    font-weight: bold;
+    /* font-family: 'Black Ops One', cursive; */
+    /* font-family: 'Creepster', cursive; */
+    font-family: 'Pirata One', cursive;
+    /* font-family: 'Rye', cursive; */
+    letter-spacing: 3px;
+}
+
+
+
+
+
+
+
+.footer{
+    width: 100%;
+    height: 50px;
+    /* border: 1px solid red; */
+    background-color: white;
+    text-align: center;
+
+}
+.footer a{
+    padding: 20px;
+    color: black;
+    text-decoration: none;
+    line-height: 50px;
+    font-weight: bolder;
+    font-size: 16px;
+        /* font-family: 'Black Ops One', cursive; */
+    /* font-family: 'Creepster', cursive; */
+    /* font-family: 'Pirata One', cursive; */
+    font-family: 'Rye', cursive;
+}
+.footer a:hover{
+    color: #1ceaed;
+}
+
+
+
+
+
+
+
+/* About css */
+.about{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutpic{
+    height: 700px;
+    flex-basis: 35%;
+    /* border: 1px solid white; */
+}
+.aboutpic img{
+    width: 100%;
+    height: 100%;
+}
+.abouttext{
+    height: 700px;
+    flex-basis: 50%;
+    /* border: 1px solid white; */
+    padding: 50px 50px;
+    position: relative;
+}
+.abouttext h1{
+    font-weight: bolder;
+    position: relative;
+    font-size: 50px;
+    color: #1ceaed;
+}
+.abouttext h1::before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    height: 3px;
+    width: 12%;
+    background-color: #1ceaed;
+}
+
+.abouttext p{
+    font-size: 20px;
+    line-height: 25px;
+}
+.abouttext .hire{
+    padding: 8px 25px;
+    background-color: #1ceaed;
+    border-radius: 25px;
+    border: none;
+    color: white;
+}
+.abouttext .cv{
+    padding: 8px 25px;
+    background-color: gray;
+    border-radius: 25px;
+    border: none;
+    color: white;
+}
+.btn1{
+    padding: 10px 20px;
+    background-color:  #1ceaed;
+    /* border: 1px solid #1ceaed; */
+    border-radius: 5px;
+    color: black;
+    font-weight: bolder;
+    border: 3px solid #1ceaed;
+}
+.btn1:hover{
+    background-color: transparent;
+    border: 3px solid #1ceaed;
+    color: #1ceaed;
+}
+.btn2{
+    margin-left: 50px;
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 3px solid #1ceaed;
+    border-radius: 5px;
+    color: #1ceaed;
+    /* font-weight: bolder; */
+    font-weight: bolder;
+}
+.btn2:hover{
+    background-color:  #1ceaed;
+    color: black;
+}
+
+
+
+.skill {
+    width: 100%;
+    height: 500px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}   
+
+.skill1a{
+    flex-basis: 80%;
+    /* border: 1px solid black ; */
+    text-align: center;
+}
+.skill1a h1 {
+    color: #1ceaed;
+    font-weight: bold;
+    font-size: 40px;
+    position: relative;
+}
+.skill1a h1::before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 42.5%;
+    height: 3px;
+    width: 5%;
+    background-color: #1ceaed;
+}
+.skill .p {
+    font-size: 23px;
+    /* color: rgba(128, 128, 128, 0.761); */
+    font-weight: 300;
+    /* border: 1PX solid white; */
+}
+.skill1 {
+    flex-basis: 52%;
+    height: 350px;
+    /* border: 1px solid black; */
+}
+.skill1 h3{
+    font-size: 25px;
+    font-weight: bold;
+}
+.progress .progress-bar{
+    position: relative;
+}
+.progress1{
+    margin-left: 72.8%;
+    background-color: #1ceaed;
+    /* color: white; */
+    font-weight: bolder;
+    text-align: center;
+    padding: 5px 3px;
+    font-size: 12px;
+    clip-path: polygon(50% 0, 68% 15%, 100% 15%, 100% 81%, 0 81%, 0 15%, 29% 15%);
+}   
+.progress2{
+    margin-left: 97%;
+    background-color: #1ceaed;
+    /* color: white; */
+    font-weight: bolder;
+    text-align: center;
+    padding: 5px 3px;
+    font-size: 12px;
+    clip-path: polygon(50% 0, 68% 15%, 100% 15%, 100% 81%, 0 81%, 0 15%, 29% 15%);
+}   
+.progress3{
+    margin-left: 96.8%;
+    background-color: #1ceaed;
+    /* color: white; */
+    font-weight: bolder;
+    text-align: center;
+    padding: 5px 3px;
+    font-size: 12px;
+    clip-path: polygon(50% 0, 68% 15%, 100% 15%, 100% 81%, 0 81%, 0 15%, 29% 15%);
+}   
+.progress4{
+    margin-left: 93%;
+    background-color: #1ceaed;
+    /* color: white; */
+    font-weight: bolder;
+    text-align: center;
+    padding: 5px 3px;
+    font-size: 12px;
+    clip-path: polygon(50% 0, 68% 15%, 100% 15%, 100% 81%, 0 81%, 0 15%, 29% 15%);
+}   
+.progress5{
+    margin-left: 67.8%;
+    background-color: #1ceaed;
+    /* color: white; */
+    font-weight: bolder;
+    text-align: center;
+    padding: 5px 3px;
+    font-size: 12px;
+    clip-path: polygon(50% 0, 68% 15%, 100% 15%, 100% 81%, 0 81%, 0 15%, 29% 15%);
+}   
+
+
+
+.gret {
+    width: 100%;
+    height: 125vh;
+    /* border: 1px solid white; */
+}
+.gret h1{
+    font-size: 42px;
+    color: #1ceaed;
+    font-weight: bolder;
+    position: relative;
+}
+.gret h1::before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 42.%;
+    height: 3px;
+    width: 4%;
+    background-color: #1ceaed;
+}
+.gret p {
+    color: #1ceaed;
+    font-weight: bold;
+    font-size: 20px;
+}
+.gret h2 {
+    font-size: 50px;
+}
+.gret .pa {
+    font-size: 20px;
+    color: rgba(128, 128, 128, 0.761);
+    font-weight: 300;
+}
+.web1 {
+    width: 100%;
+    height: 1000px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.web {
+    flex-basis: 22%;
+    height: 380px;
+    /* border: 1px solid black; */
+    position: relative;
+    border-radius: 10px;
+    padding: 25px;
+    padding-top: 70px;
+}
+.web h3{
+    font-weight: bold;
+}
+.web:hover .web2 {
+    margin-left: 30px;
+    background-color: white;
+}
+.web:hover {
+    background-color: #1ceaed;
+}
+.web:hover h3{
+    color: black;
+}
+.web:hover p {
+    color: black;
+}
+.web h3 {
+    font-size: 26px;
+}
+.web1 p {
+    color: rgba(128, 128, 128, 0.761);
+    font-weight: 400;
+}
+.web2 {
+    width: 80px;
+    height: 80px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    transition: 0.5s;
+    left: 40px;
+    background-color: #1ceaed;
+}
+.web2 #icon {
+    font-size: 30px;
+    color: white;
+    padding: 25px;
+    transition: 0.5s;
+}
+.web:hover .web2 #icon {
+    color: black;
+}
+
+/* About css */
+
+/* resume css */
+.resume{
+    height: 140vh;
+    text-align: center;
+    /* background-color: #d9d9db; */
+}
+.resume h1{
+    font-weight: bolder;
+    position: relative;
+    font-size: 40px;
+    color: #1ceaed;
+}
+.resume h1::before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 42.5%;
+    height: 3px;
+    width: 3%;
+    background-color: #1ceaed;
+}
+
+.subresume{
+    width: 80%;
+    height: 120vh;
+    /* border: 1px solid black; */
+    transform: translate(15%);
+    z-index: -1;
+}
+.subresume1{
+    height: 120vh;
+    /* border: 1px solid red; */
+    text-align: left;
+    z-index: -1;
+}
+
+.edu{
+    height: 220px;
+    background-color: #1ce9ed54;
+    padding: 20px;
+    border-radius: 10px;
+    /* z-index: -1; */
+    color: black;
+    cursor: pointer;
+    border: 2px solid #1ceaed;
+}
+.edu:hover{
+    background-color: #1ceaed;
+    border: 2px solid #1ceaed;
+}
+.edu p{
+    font-size: 18px;
+}
+/* resume css */
+
+/*contact */
+.conmain{
+
+    height: 1000px;
+
+    /* background-color: rgba(212, 210, 210, 0.205); */
+    /* border: 1px solid black; */
+    /* margin-left: 10%; */
+}
+.I{
+    width: 100%;
+    height: 1000px;
+    /* border: 1px solid red;     */
+    /* margin-top: 50px; */
+    /* margin-left: 25%; */
+    /* background-color: white; */
+}
+
+ .I h1{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 100px;
+}
+
+ .I .I1{
+    width: 30%;
+    height: 800px;
+    /* border: 1px solid black; */
+    margin-left: 10%;
+    margin-top: 50px;
+    float: left;
+}
+
+ .I .I1 p{
+    font-size: 23px;
+}
+
+
+ .I .I2{
+    width: 50%;
+    height: 800px;
+    /* border: 1px solid black; */
+    margin-left: 10%;
+    margin-top: 50px;
+    float: right;
+}
+
+ .I .I2 form {
+    font-size: 23px;    
+}
+
+ .I .I2 form input{
+    width: 75%  ;
+    height: 30px;
+    margin-top: 8px;
+    border: 1px solid black;
+}
+
+
+ .I .I2 form .I2a{
+    width: 75%;
+    height: 120px;
+}
+
+ .I .I2 form button{
+    width: 75%;
+    height: 30px;
+    background-color: black;
+    color: white;
+    transition: 1s;
+}
+
+ .I .I2 form button:hover {
+    background-color: gray;
+}
+/*contact */
+
+
+/*work*/
+
+.html{
+    height: auto;
+    /* border: 1px solid white; */
+    /* margin-bottom: 50px; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    text-align: center;
+}
+.html h1{
+    font-size: 52px;
+    font-weight: bolder;
+    color: red;
+}
+.html h2{
+    font-size: 45px;
+    font-weight: bolder;
+    
+}
+.htmlimg{
+    /* flex-basis: 19%; */
+    height: 500px;
+    /* margin-bottom: 150px; */
+    
+}
+.htmlimg img{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/*work*/
+
+
+
+
+
+
+@media(max-width:576px){
+    .heading{
+        /* height: 100px    ; */
+    }
+    .intro{
+        flex-direction: column;
+        height: auto;
+    }
+    .subintro1{
+        height: 300px;
+        padding: 0px 0px ;
+    }
+    
+    .footer a{
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* About css */
+    .about{
+        flex-direction: column;
+        margin-top: 100px;
+        height: auto;
+    }
+    .abouttext{
+        height: auto    ;
+    }
+    .skill1 {
+        width: 90%;
+    }
+    .gret {
+        height: auto;
+    }
+    .web1 {
+        height: auto;
+        flex-wrap: wrap;
+    }
+    .web {
+        flex-basis: 48%;
+        margin-top: 55px;
+    }   
+    /* About css */
+    /* resume css */
+    .resume {
+        height: auto;
+
+    }
+    .subresume{
+        height: auto;
+       
+    }
+    .subresume1{
+        height: auto;
+    }
+    .edu{
+        height: auto;
+        
+    }
+    .subresume1{
+        margin-top: 20px;
+    }
+    /* resume css */
+}

@@ -1,0 +1,610 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: black; */
+    color: white;
+}
+aside{
+    width: 15%;
+    height: 200vh;
+    border: 1px solid white;
+    position: absolute;
+    position: fixed;
+    margin-left: 1.3%;
+    text-align: center;
+    transition: 2s;
+}
+.addaside{
+    margin-left: 0%;
+}
+.profilepic{
+    height: 200px;
+    width: 70%;
+    border: 5px solid white;
+    border-radius: 50%;
+    margin-left: 15%;
+}
+.profilepic img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+aside a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 1s;
+}
+aside a:hover{
+    color: #FF0066;
+}
+#menu{
+    display: none;
+}
+
+.main{
+    height: auto;
+    /* border: 1px solid yellow; */
+}
+.carousel-inner{
+    /* margin-top: -72px; */
+    position: absolute;
+
+    z-index: -1;
+    height: 800px;
+}
+.carousel-item img{
+    /* clip-path: polygon(30% 0, 100% 0, 100% 100%, 29% 100%, 42% 50%);  */
+}
+.slide1{
+    height: 600px;
+    /* border: 2px solid greenyellow; */
+    display: flex;
+}
+.slide1a {
+    flex-basis: 30%;
+    /* border: 2px solid red; */
+    height: inherit;
+    position: relative;
+}
+.slide1a h6{
+    /* position: absolute;
+    top: 150px;
+    left: 50px; */
+    /* width: 1000px; */
+    padding-top: 150px;
+    padding-left: 20%;
+    z-index: 1;
+    color: #FF0066;
+}
+.slide1a h1{
+    position: absolute;
+    font-size: 60px;
+    z-index: 1;
+    width: 800px;
+    padding-left: 20%;
+    font-weight: bolder;
+}
+.slide1a .colortext{
+    color: #FF0066;
+}
+.slide1a .btn1{
+    position: absolute;
+    top: 420px;
+    left: 20%;
+    padding: 5px 20px;
+    background-color: #FF0066;
+    border: 1px solid #FF0066;
+    border-radius: 5px;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.slide1a .btn2{
+    position: absolute;
+    top: 420px;
+    left: 50%;
+    padding: 4px 20px;
+    /* background-color: #FF0066; */
+    border: 3px solid #FF0066;
+    border-radius: 5px;
+    color: #FF0066;
+    /* font-weight: bolder; */
+    /* cursor: pointer; */
+}
+
+.slide1b{
+    flex-basis: 70%;
+    /* border: 2px solid black; */
+    height: inherit;
+}
+.slide1b img{
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 14% 50%);
+}
+
+.about{
+    width: 100%;
+    height: 700px;
+    /* border: 1px solid white; */
+    background-color: #111111;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-top: -100px;
+}
+.aboutpic{
+    flex-basis: 40%;
+    height: 520px;
+    /* border: 1px solid white;  */
+    position: relative;
+}
+.aboutpic img{
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+}
+.aboutpic .person1{
+    z-index: -1;
+    
+}
+.aboutpic .person2{
+    z-index: 0;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 15%;
+
+}
+.aboutpic .person2:hover{
+    z-index: 1;
+    display: none;
+}
+
+
+
+.abouttext{
+    flex-basis: 60%;
+    height: 520px;
+    /* border: 1px solid white; */
+}
+.abouttext i{
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+
+
+.skill{
+    height: 700px;
+    text-align: center;
+}
+.skill h1{
+    color: #FF0066;
+}
+.skill-circle{
+    /* border: 1px solid white; */
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: 2s;
+}
+  
+
+.skill1{
+    flex-basis: 20%;
+    height: 250px;
+    border-radius   : 50%;
+    transition: 1s;
+    border: 10px solid #FF0066;
+}
+
+.skill-circle h1{
+    font-weight: bolder;
+}
+.skill2{
+    flex-basis: 20%;
+    height: 250px;
+    border: 10px solid white;
+    border-bottom: 10px solid #FF0066;
+    border-right: 10px solid #FF0066;
+    border-top: 10px solid #FF0066;
+    transition: 1s;
+    border-radius   : 50%;
+}
+.skill3{
+    flex-basis: 20%;
+    height: 250px;
+    border: 10px solid white;
+    /* border: 10px solid white; */
+    border-bottom: 10px solid #FF0066;
+    border-right: 10px solid #FF0066;
+    border-top: 10px solid #FF0066;
+    transition: 1s;
+    border-radius: 50%;
+}
+.skill4{
+    flex-basis: 20%;
+    height: 250px;
+    border: 10px solid white;
+    border: 10px solid white;
+    transition: 1s;
+    /* border-top: 10px solid #FF0066; */
+    border-radius: 50%;
+    border-bottom: 10px solid #FF0066;
+    border-right: 10px solid #FF0066;
+}
+
+
+
+.services{
+    height: 700px;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.service1{
+    flex-basis: 26%;
+    height: 300px;
+    /* border: 1px solid white; */
+    background-color: white;
+    padding: 20px;
+    cursor: pointer;
+}
+.services:hover h1{
+    color: #FF0066;
+}
+.service1 i{
+    color: black;
+    font-size: 40px;
+}
+.service1 h1{
+    color: black;
+    font-size: 40px;
+    transition: 1s;
+}
+.service1 p{
+    color: black;
+    font-size: 20px;
+}
+.service2{
+    flex-basis: 26%;
+    height: 300px;
+    /* border: 1px solid white; */
+    background: transparent;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.service2 i{
+    color: white;
+    font-size: 40px;
+}
+.service2 h1{
+    /* color: black; */
+    font-size: 40px;
+    transition: 1s;
+}
+.service2 p{
+    /* color: black; */
+    font-size: 20px;
+}
+
+.experience{
+    height: 400px;
+    /* border: 1px solid white ; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.experience1{
+    flex-basis: 23%;
+    height: 300px;
+    border: 1px solid white;
+    text-align: center;
+}
+.experience1:hover .experience1a1{
+    clip-path: circle(31.1% at 50% 50%);
+}
+.experience1a{
+    width: 35%;
+    height: 100px;
+    /* border: 1px solid white; */
+    margin-top: 30px;
+    position: relative;
+    /* background-color: #FF0066; */
+}
+.experience1a1{
+    width: 100%;
+    height: 100%;
+    background-color: #FF0066;
+    clip-path: polygon(8% 0, 100% 91%, 100% 100%, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 0);
+    z-index: -1;
+    transition: 1s;
+}
+.experience1a i{
+    position: absolute;
+    left: 35%;
+    top: 25%;
+    z-index: 1;
+}
+.slider{
+    height: 500px;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide{
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .subslider{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .sliderpic{
+    flex-basis: 30%;
+    height: 350px;
+    /* border: 1px solid black; */
+  }
+  .slidertext{
+    flex-basis: 45%;
+    height: 350px;
+    /* border: 1px solid black; */
+    text-align: start;
+  }
+  .slidertext p{
+    color: black;
+  }
+  .slidertext h3{
+    color: black;
+  }
+  .slidertext h6{
+    color: black;
+    opacity: 0.5;
+  }
+  .contact{
+    height: 800px;
+    text-align: center;
+}
+.contact h1{
+    font-weight: bolder;
+    position: relative;
+    color: #FF0066;
+}
+
+.subcontact{
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
+}
+.touch{
+    flex-basis: 47%;
+}
+form button{
+    padding: 10px 20px;
+    border: none;
+    background-color: #FF0066;
+    border-radius: 25px;
+    color: white;
+}
+.condetail{
+    flex-basis: 47%;
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:992px){
+    aside{
+        width: 35%;
+        z-index: 1;
+        background-color: #FF0066;
+        margin-left: -35%;
+    }
+    #menu{
+        position: fixed;
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+    .skill-circle{
+
+    }
+    .skill1{
+        flex-basis: 24%;
+    }
+    .skill2{
+        flex-basis: 24%;
+    }
+    .skill3{
+        flex-basis: 24%;
+    }
+    .skill4{
+        flex-basis: 24%;
+    }
+    
+}
+@media(max-width:768px)
+{
+    aside{
+        width: 35%;
+        z-index: 1;
+        background-color: #FF0066;
+        margin-left: -35%;
+    }
+    .slide1a h6{
+        font-size: 9px;
+    }
+    .slide1a h1{
+        font-size: 35px;
+    }
+    .slide1a .btn1{
+        top: 310px;
+        font-size: 10px;
+    }
+    .slide1a .btn2{
+        width: 120px;
+        top: 350px;
+        font-size: 10px; 
+        left: 20%;
+    }
+    #menu{
+        position: fixed;
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+    .about{
+        flex-direction: column;
+        height: auto;
+    }
+    .skill-circle{
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .skill1{
+        flex-basis: 40%;
+    }
+    .skill2{
+        flex-basis: 40%;
+    }
+    .skill3{
+        flex-basis: 40%;
+        margin-top: 50px;
+    }
+    .skill4{
+        flex-basis: 40%;
+        margin-top: 50px;
+    }
+    .services{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: auto;
+    }
+    .slidertext{
+        flex-basis: 65%;
+    }
+    .subcontact{
+        flex-direction: column;
+    }
+    .condetail{
+        margin-top: 30px;
+    }
+
+}
+@media(max-width:576px)
+{
+    aside{
+        width: 35%;
+        z-index: 1;
+        background-color: #FF0066;
+        margin-left: -35%;
+    }
+    .slide1a h6{
+        font-size: 9px;
+    }
+    .slide1a h1{
+        font-size: 35px;
+    }
+    .slide1a .btn1{
+        top: 310px;
+        font-size: 10px;
+    }
+    .slide1a .btn2{
+        width: 120px;
+        top: 350px;
+        font-size: 10px; 
+        left: 20%;
+    }
+    #menu{
+        position: fixed;
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+    .about{
+        flex-direction: column;
+        height: auto;
+    }
+    .skill-circle{
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .skill1{
+        flex-basis: 40%;
+    }
+    .skill2{
+        flex-basis: 40%;
+    }
+    .skill3{
+        flex-basis: 40%;
+        margin-top: 50px;
+    }
+    .skill4{
+        flex-basis: 40%;
+        margin-top: 50px;
+    }
+    .services{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: auto;
+    }
+    .slidertext{
+        flex-basis: 65%;
+    }
+    .subcontact{
+        flex-direction: column;
+    }
+    .condetail{
+        margin-top: 30px;
+    }
+
+}
