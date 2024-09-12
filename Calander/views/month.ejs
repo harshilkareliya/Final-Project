@@ -1,0 +1,166 @@
+<html>
+<head>
+    <title>Calendar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <div class="calendar">
+        <div class="calendar-header">
+            <h1><%=month%> <%=year%></h1>
+            <div class="btn-group" role="group">
+                <a type="button" class="btn btn-outline-primary">Month</a>
+                <a type="button" class="btn btn-outline-primary">Week</a>
+                <a type="button" class="btn btn-outline-primary">Day</a>
+            </div>
+            <div class="btn-group" role="group">
+                <!-- Previous month button -->
+                <a href="/?year=<%= monthNumber === '01' ? year - 1 : year %>&month=<%= monthNumber === '01' ? 12 : ('0' + (parseInt(monthNumber) - 1)).slice(-2) %>" type="button" class="btn btn-outline-primary"><</a>
+                
+                <!-- Today button -->
+                <a href="/" type="button" class="btn btn-outline-primary">Today</a>
+                
+                <!-- Next month button -->
+                <a href="/?year=<%= monthNumber === '12' ? year + 1 : year %>&month=<%= monthNumber === '12' ? '01' : ('0' + (parseInt(monthNumber) + 1)).slice(-2) %>" type="button" class="btn btn-outline-primary">></a>
+            </div>
+                      
+            
+            <!-- <button type="button" class="btn btn-primary btn-add">Add Appointment</button> -->
+        </div>
+        <table class="calendar-table">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% thisMonth.map((week, weekIndex) => { %>
+                    <tr>
+                        <% week.map((day, dayIndex) => { %>
+                        <td 
+                          onclick="<%= (weekIndex === thisMonth.length - 1 && day >= 1 && day <= 6) || (weekIndex === 0 && day >= 23 && day <= 31) ? '' : 'showForm(' + day + ')' %>"
+                          style="background-color: <%= (year + '-' + monthNumber + '-' + (day < 10 ? '0' + day : day)) === today ? '#D2E0FB' : '' %>; opacity: <%= (weekIndex === thisMonth.length - 1 && day >= 1 && day <= 6) || (weekIndex === 0 && day >= 23 && day <= 31) ? '0.5' : '1' %>; ">
+                          <%= day %>
+                          <% if ((weekIndex === thisMonth.length - 1 && day >= 1 && day <= 6) || (weekIndex === 0 && day >= 23 && day <= 31)) { %>
+                            <p></p>
+                          <% } else { %>
+                            <% const filteredAppointments = showappointments.filter(e => e.day === day); %>
+                            <% if (filteredAppointments.length > 0) { %>
+                              <% filteredAppointments.map((ap) => { %>
+                                <p class="appointment">
+                                    <%= ap.title %> 
+                                    <i class="bi bi-pencil-square" onclick="editshowForm('<%= ap.title %>', '<%= ap.day %>', '<%= ap.startTime %>', '<%= ap.endTime %>', '<%= ap.id %>', '<%= ap.date %>')"></i>
+                                </p>
+                              <% }) %>
+                            <% } %>
+                          <% } %>
+                        </td>
+                        <% }) %>
+                    </tr>
+                <% }) %> 
+            </tbody>
+        </table>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Appointment Form -->
+    <div class="appointment-form" id="appointmentForm">
+        <h5 class="mb-3">Add Appointment</h5>
+        <form method="post" action="/addAppointment">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title*</label>
+                <input type="text" name="title" class="form-control" id="title">
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Date*</label>
+                <div class="input-group">
+                    <input type="text" name="date" class="form-control" id="selectedDate" readonly>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="start-time" class="form-label">Start Time*</label>
+                <input type="time" name="startTime" class="form-control" id="start-time">
+            </div>
+            <div class="mb-3">
+                <label for="end-time" class="form-label">End Time*</label>
+                <input type="time" name="endTime" class="form-control" id="end-time">
+            </div>
+            <div class="d-flex justify-content-between">
+                <a href="/" class="btn btn-link">Cancel</a>
+                <input type="submit" class="btn btn-link" value="Add Appointment"></input>
+            </div>
+        </form>
+    </div>
+
+    <!-- Edit Appointment Form -->
+    <div class="appointment-form" id="editappointmentForm" style="display: none;">
+        <h5 class="mb-3">Edit Appointment</h5>
+        <form method="post" action="/editAppointment" id="submitEdit">
+            <div class="mb-3">
+                <label for="edit-title" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control" id="edit-title">
+            </div>
+            <div class="mb-3">
+                <label for="edit-date" class="form-label">Date</label>
+                <div class="input-group">
+                    <input type="date" name="date" class="form-control" id="edit-date">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="edit-start-time" class="form-label">Start Time</label>
+                <input type="time" name="startTime" class="form-control" id="edit-start-time">
+            </div>
+            <div class="mb-3">
+                <label for="edit-end-time" class="form-label">End Time</label>
+                <input type="time" name="endTime" class="form-control" id="edit-end-time">
+            </div>
+            <div class="d-flex justify-content-between">
+                <a href="/" class="btn border">Cancel</a>
+                <a href="/deleteAppointment" class="btn btn-danger">Delete</a>
+                <input type="submit" class="btn btn-success" value="Submit"></input>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
+
+<script>
+    // JavaScript to show the form and set the selected date
+    function showForm(day) {
+        // Show the overlay and form
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('appointmentForm').style.display = 'block';
+
+        // Set the selected date in DD/MM/YYYY format
+        let selectedDate = (day < 10 ? '0' + day : day) + '/<%= monthNumber %>/<%= year %>';
+        document.getElementById('selectedDate').value = selectedDate;
+    }
+
+    function editshowForm(title, day, startTime, endTime, id, date) {
+        // Show the overlay and edit form
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('editappointmentForm').style.display = 'block';
+
+        // Populate the form fields with the appointment details
+        document.getElementById('edit-title').value = title
+        document.getElementById('edit-date').value = date;
+        document.getElementById('edit-start-time').value = startTime;
+        document.getElementById('edit-end-time').value = endTime;
+
+        // Set the href for the delete button dynamically
+        const deleteButton = document.querySelector('.btn-danger');
+        deleteButton.setAttribute('href', `/deleteAppointment?id=${id}`);
+
+        // Set the action for the submit form dynamically
+        const submitEdit = document.querySelector('#submitEdit');
+        submitEdit.setAttribute('action', `/editAppointment?id=${id}`);
+    }
+</script>
