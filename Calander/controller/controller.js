@@ -39,18 +39,28 @@ function createMonth(year, month) {
         thisMonth.push(week);
     }
 
-    // console.log(thisMonth)
+    console.log(thisMonth)
     return thisMonth;
 }
 
 module.exports.home = async (req, res) => {
     let year = parseInt(req.query.year) || new Date().getFullYear();
-    let month = parseInt(req.query.month) || new Date().getMonth(); 
+    let month = parseInt(req.query.month) - 1 || new Date().getMonth();  // Subtract 1 because `getMonth()` is zero-based (0 for January)
 
-    const monthsName = ['January', 'February', 'March', 'April', 'May', 'June','July', 'August', 'September', 'October', 'November', 'December'];
+    // Correct the edge cases for months
+    if (month < 0) {
+        month = 11; // December
+        year -= 1; // Move to the previous year
+    } else if (month > 11) {
+        month = 0; // January
+        year += 1; // Move to the next year
+    }
+
+    const monthsName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const thisMonth = createMonth(year, month);    
     const today = new Date().toISOString().slice(0,10); 
 
+    // Fetch appointments for the specific year and month
     const appointments = await appointmentSchema.find({
         $expr: {
             $and: [
@@ -58,8 +68,9 @@ module.exports.home = async (req, res) => {
                 { $eq: [{ $substr: ["$date", 5, 2] }, (month + 1).toString().padStart(2, '0')] } // Match the month (01 for Jan, etc.)
             ]
         }
-    });    
+    });
 
+    // Prepare the showappointments array
     const showappointments = appointments.map((e) => {
         return {
             year: parseInt(e.date.substring(0, 4)),
@@ -72,7 +83,8 @@ module.exports.home = async (req, res) => {
             id: e.id
         };
     });
-
+    
+    // Combine both renders into one
     res.render('month', { 
         thisMonth, 
         year, 
@@ -83,6 +95,7 @@ module.exports.home = async (req, res) => {
     });
 };
 
+
 module.exports.addAppointment = async (req, res)=>{
     try{
         let dateParts = req.body.date.split('/');
@@ -90,7 +103,7 @@ module.exports.addAppointment = async (req, res)=>{
  
         req.body.date = formattedDate;
         const isAdd = await appointmentSchema.create(req.body)
-        isAdd ? res.redirect('/') : console.log('Data Not Add Properly');
+        isAdd ? res.redirect('back') : console.log('Data Not Add Properly');
     } catch(err){
         console.log(err);
     }
@@ -99,7 +112,7 @@ module.exports.addAppointment = async (req, res)=>{
 module.exports.deleteAppointment = async (req, res)=>{
     try{
         const isdelete = await appointmentSchema.findByIdAndDelete(req.query.id);
-        isdelete ? res.redirect('/') : console.log('Data Not Deleted'); 
+        isdelete ? res.redirect('back') : console.log('Data Not Deleted'); 
     }  catch(err){
         console.log(err);
     }
@@ -110,8 +123,12 @@ module.exports.editAppointment = async (req, res)=>{
         console.log(req.body)
         console.log("Edit id :- "+req.query.id)
         const isedit = await appointmentSchema.findByIdAndUpdate(req.query.id,req.body)
-        isedit ? res.redirect('/') : console.log('Data Not Edit')
+        isedit ? res.redirect('back') : console.log('Data Not Edit')
     } catch(err){
         console.log(err);
     }
+}
+
+module.exports.back = async (req, res)=>{
+    res.redirect('back')
 }

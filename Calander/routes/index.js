@@ -6,5 +6,6 @@ routes.get('/', controller.home)
 routes.post('/addAppointment', controller.addAppointment)
 routes.get('/deleteAppointment',controller.deleteAppointment)
 routes.post('/editAppointment', controller.editAppointment)
+routes.get('/back', controller.back)
 
 module.exports = routes
