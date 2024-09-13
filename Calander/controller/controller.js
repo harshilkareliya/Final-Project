@@ -39,14 +39,17 @@ function createMonth(year, month) {
         thisMonth.push(week);
     }
 
-    console.log(thisMonth)
+    // console.log(thisMonth)
     return thisMonth;
 }
 
 module.exports.home = async (req, res) => {
     let year = parseInt(req.query.year) || new Date().getFullYear();
-    let month = parseInt(req.query.month) - 1 || new Date().getMonth();  // Subtract 1 because `getMonth()` is zero-based (0 for January)
+    let month = parseInt(req.query.month) - 1
 
+    if (isNaN(month) || month < 0 || month > 11) {
+        month = new Date().getMonth();  // Default to the current month
+    }
     // Correct the edge cases for months
     if (month < 0) {
         month = 11; // December
@@ -94,7 +97,6 @@ module.exports.home = async (req, res) => {
         today 
     });
 };
-
 
 module.exports.addAppointment = async (req, res)=>{
     try{
