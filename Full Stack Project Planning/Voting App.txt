@@ -1,0 +1,35 @@
+Home Page
+    -> List Of Candidate
+
+Header 
+    -> Home (list of candidate)
+    -> Sign up / Login 
+    -> Profile (if logined)
+    -> Vote (if logined)
+
+SignUp / Login
+    -> Sign up / Login Page
+
+Profile 
+    -> Profile (if logined)
+    -> Edit Profile
+    -> Log Out
+
+Vote 
+    -> If logined
+    -> List Of candidates with Vote Button
+    -> Once You voted than you not able to Vote Only see
+
+Vote Count 
+    -> If votes
+    -> Show Voting Count and Persantage of voting
+
+Admin
+    -> If User role is Admin thna show this option
+    Candiate
+        -> Add Candidate
+        -> Update Candiate
+        -> Delete Candidate
+    
+    Users
+        -> List Of Users
